@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="AllJoynLampCommandSet_en-us">
+    <CommandPrefix>Genie </CommandPrefix>
+    <Example> I feel happy </Example>
+    <Command Name="ToggleLamp">
+      <Example> I am sad </Example>
+      <ListenFor> I {switchVerb} {SwitchableStateChange} </ListenFor>
+      <Feedback> Good to know. You are {switchableStateChange} </Feedback>
+      <Navigate/>
+    </Command>
+    <PhraseList Label="switchableStateChange">
+      <Item> happy </Item>
+      <Item> sad </Item>
+      <Item> mad </Item>
+      <Item> disgusted </Item>
+      <Item> scared </Item>
+    </PhraseList>
+    <PhraseList Label="switchVerb">
+      <Item> am </Item>
+      <Item> feel </Item>
+    </PhraseList>
+  </CommandSet>
+</VoiceCommands>
