@@ -7,9 +7,9 @@ namespace LampModule3
 {
     public class VoiceCommands
     {
-        private static uint bright = 0;
-        private static uint sat = 0;
-        private static uint hue = 0;
+        private static uint bright;
+        private static uint sat;
+        private static uint hue;
 
 
         public async static void RegisterVoiceCommands()
@@ -24,16 +24,18 @@ namespace LampModule3
             {
                 case "ToggleLamp":
                     string switchableStateChange = eventArgs.Result.SemanticInterpretation.Properties["switchableStateChange"][0];
-                    if (string.Equals(switchableStateChange, "sad", StringComparison.OrdinalIgnoreCase))
+                    string switchVerb = eventArgs.Result.SemanticInterpretation.Properties["switchVerb"][0];
+                    if (string.Equals(switchableStateChange, "sad", StringComparison.OrdinalIgnoreCase) || string.Equals(switchVerb, "lost", StringComparison.OrdinalIgnoreCase) ||
+                        string.Equals(switchVerb, "hurt", StringComparison.OrdinalIgnoreCase)) 
                     {
-                        bright = 143270497;
+                        bright = 223270497;
                         sat = 3611612928;
                         hue = 2659819264;
                     }
 
                     else if (string.Equals(switchableStateChange, "mad", StringComparison.OrdinalIgnoreCase))
                     {
-                        bright = 2263380042;
+                        bright = 277872639;
                         sat = 3611612928;
                         hue = 0;
                     }
@@ -47,17 +49,19 @@ namespace LampModule3
 
                     else if (string.Equals(switchableStateChange, "scared", StringComparison.OrdinalIgnoreCase))
                     {
-                        bright = 1868656512;
+                        bright = 2068656512;
                         sat = 4060738048;
                         hue = 3213475840;
                     }
 
-                    else if (string.Equals(switchableStateChange, "disgusted", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(switchableStateChange, "disgusted", StringComparison.OrdinalIgnoreCase) || string.Equals(switchableStateChange, "eww", StringComparison.OrdinalIgnoreCase))
                     {
-                        bright = 2533398272;
-                        sat = 3827295232;
-                        hue = 87701628;
+                        bright = 2773329152;
+                        sat = 2683609088;
+                        hue = 1423791360;
                     }
+
+
 
                     else
                     {

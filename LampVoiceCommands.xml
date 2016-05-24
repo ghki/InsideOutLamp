@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   <CommandSet xml:lang="en-us" Name="AllJoynLampCommandSet_en-us">
-    <CommandPrefix>Genie </CommandPrefix>
+    <CommandPrefix> Yo dawg </CommandPrefix>
     <Example> I feel happy </Example>
     <Command Name="ToggleLamp">
       <Example> I am sad </Example>
-      <ListenFor> I {switchVerb} {SwitchableStateChange} </ListenFor>
+      <ListenFor> I {switchVerb} [the] [my] {SwitchableStateChange} </ListenFor>
+      <ListenFor> {SwitchableStateChange} </ListenFor>
       <Feedback> Good to know. You are {switchableStateChange} </Feedback>
       <Navigate/>
     </Command>
@@ -15,10 +16,18 @@
       <Item> mad </Item>
       <Item> disgusted </Item>
       <Item> scared </Item>
+      <Item> lottery </Item>
+      <Item> job </Item>
+      <Item> leg </Item>
+      <Item> arm </Item>
+      <Item> eww </Item>
     </PhraseList>
     <PhraseList Label="switchVerb">
       <Item> am </Item>
       <Item> feel </Item>
+      <Item> won </Item>
+      <Item> lost </Item>
+      <Item> hurt </Item>
     </PhraseList>
   </CommandSet>
 </VoiceCommands>
